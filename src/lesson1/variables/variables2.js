@@ -11,8 +11,8 @@ if (true) {
 console.dir(firstVariable); //true
 console.dir(secondVariable); //false
 
-thirdVariable;
-console.dir(thirdVariable); //undefined
+thirdVariable; //fails here
+console.dir(thirdVariable);
 
 fourthVariable = {};
 fourthVariable.firstKey = 'firstValue';
