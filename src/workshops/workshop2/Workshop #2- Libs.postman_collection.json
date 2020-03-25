@@ -1,0 +1,718 @@
+{
+	"info": {
+		"_postman_id": "35f7cdd4-4e7e-478c-a19d-0a16dc1b101f",
+		"name": "Workshop #2: Libs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate Random String",
+			"item": [
+				{
+					"name": "No variables",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Nick\",\n\t\"lastName\": \"Verb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/post",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dynamic variables",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba0034e9-7557-4112-97b8-b117ccb2f024",
+								"exec": [
+									"const randomName = '{{$randomFirstName}}'; // dynamic variables don't work in Tests/PRS"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"{{$randomFirstName}}\",\n\t\"lastName\": \"{{$randomLastName}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/post",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uuid",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "06fde2ae-ed7a-4fd4-9152-ff634be808ef",
+								"exec": [
+									"const uuid = require('uuid');",
+									"",
+									"pm.collectionVariables.set('uuid', uuid());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Nick{{uuid}}\",\n\t\"lastName\": \"Verb{{uuid}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/post",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Moment",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "06fde2ae-ed7a-4fd4-9152-ff634be808ef",
+								"exec": [
+									"const moment = require('moment');",
+									"",
+									"pm.collectionVariables.set('timestamp', moment().format('MMMM Do YYYY'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Nick{{timestamp}}\",\n\t\"lastName\": \"Verb{{timestamp}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/post",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lodash",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "06fde2ae-ed7a-4fd4-9152-ff634be808ef",
+								"exec": [
+									"pm.collectionVariables.set('randomString', _.times(200, () => _.random(35).toString(36)).join(''));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"Nick{{randomString}}\",\n\t\"lastName\": \"Verb{{randomString}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/post",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "lodash",
+			"item": [
+				{
+					"name": "Planets No lodash",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									"const planetNames = [];",
+									"",
+									"pm.response.json().results.forEach(planet => {",
+									"    console.log(`Planet name is: ${planet.name}`);",
+									"    planetNames.push(planet.name);",
+									"});",
+									"",
+									"console.log(`Planet names are: ${planetNames}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planets lodash: arrays",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									"const planetNames = [];",
+									"",
+									"_.each(pm.response.json().results, planet => {",
+									"    console.log(`Planet name is: ${planet.name}`);",
+									"    planetNames.push(planet.name);",
+									"});",
+									"",
+									"console.log(`Planet names are: ${planetNames}`);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planets lodash: random int",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6a500289-a23e-4a9e-a795-69fec7f537f1",
+								"exec": [
+									"pm.collectionVariables.set('randomPlanetId', _.random(1, 61));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets/{{randomPlanetId}}",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								"{{randomPlanetId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planets lodash: cloneDeep",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6a500289-a23e-4a9e-a795-69fec7f537f1",
+								"exec": [
+									"const obj1 = {};",
+									"const obj2 = _.cloneDeep(obj1);",
+									"const obj3 = obj1;",
+									"obj1.key1 = 'value1';",
+									"console.log(`Yep, Object 1 has key1: ${obj1}`);",
+									"console.log(`Object 2 is a copy of Object 1, so it has no key1: ${obj2}`);",
+									"console.log(`Object 3 is a reference to Object 1, that's why it has key1: ${obj3}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets/{{randomPlanetId}}",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets",
+								"{{randomPlanetId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "crypto.js",
+			"item": [
+				{
+					"name": "crypto.js",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e6b01ca-438f-4fa3-be89-0282621a4474",
+								"exec": [
+									"const testData = [",
+									"    {",
+									"        \"workshop\": \"JS Basics\"",
+									"    },",
+									"    {",
+									"        \"workshop\": \"Postman Libs\"",
+									"    }];",
+									"    ",
+									"const secret = 'secret';",
+									"const testDataString = JSON.stringify(testData);",
+									"    ",
+									"const sha256Example = CryptoJS.SHA256(testDataString).toString();",
+									"const AESExample = CryptoJS.AES.encrypt(testDataString, secret).toString();",
+									"const AESExampleDecrypted = CryptoJS.AES.decrypt(AESExample, secret).toString(CryptoJS.enc.Utf8);",
+									"",
+									"console.log(`SHA encrypted value: ${sha256Example}`);",
+									"console.log(`AES ecrypted value: ${AESExample}`);",
+									"console.log(`AES dectypted value: ${AESExampleDecrypted}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "httpbin.org/get",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "xml2js",
+			"item": [
+				{
+					"name": "xml2js",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f3db26d-5255-4b3d-989d-7b06976e9a5b",
+								"exec": [
+									"const jsonObject = xml2Json(responseBody);",
+									"console.log(`XML object in JSON representation: ${jsonObject}`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "studentws20",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "vwbqcn",
+									"type": "string"
+								},
+								{
+									"key": "showPassword",
+									"value": false,
+									"type": "boolean"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "text/xml"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dXNlcjpiaXRuYW1p"
+							}
+						],
+						"url": {
+							"raw": "https://ws-tracks.demohoster.com/projects.xml",
+							"protocol": "https",
+							"host": [
+								"ws-tracks",
+								"demohoster",
+								"com"
+							],
+							"path": [
+								"projects.xml"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ajv",
+			"item": [
+				{
+					"name": "Planets ajv example",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									"const ajv = require('ajv');",
+									"const ajvInstance = new ajv({logger: console});",
+									"",
+									"const schema = {",
+									"  'items': {",
+									"    'type': 'boolean'",
+									"  }",
+									"};",
+									"",
+									"const data1 = [true, false];",
+									"const data2 = [true, 12354684];",
+									"",
+									"pm.test('Schema is valid', () => {",
+									"  pm.expect(ajvInstance.validate(schema, data1)).to.be.true;",
+									"  pm.expect(ajvInstance.validate(schema, data2)).to.be.true;",
+									"});",
+									"",
+									"console.log(ajvInstance.errors);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planets ajv",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9faf367f-a5fa-4c4e-986b-215ded2ed1d1",
+								"exec": [
+									"const ajv = require('ajv');\r",
+									"const jsonBody = pm.response.json();\r",
+									"\r",
+									"const ajvInstance = new ajv({logger: console});\r",
+									"\r",
+									"const schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"required\": [\r",
+									"        \"count\",\r",
+									"        \"next\",\r",
+									"        \"previous\",\r",
+									"        \"results\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"count\": {\r",
+									"            \"type\": \"integer\",\r",
+									"        },\r",
+									"        \"next\": {\r",
+									"            \"type\": \"string\",\r",
+									"        },\r",
+									"        \"previous\": {\r",
+									"            \"type\": \"null\",\r",
+									"        },\r",
+									"        \"results\": {\r",
+									"            \"type\": \"array\",\r",
+									"            \"items\": {\r",
+									"                \"type\": \"object\",\r",
+									"                \"required\": [\r",
+									"                    \"name\",\r",
+									"                    \"rotation_period\",\r",
+									"                    \"orbital_period\",\r",
+									"                    \"diameter\",\r",
+									"                    \"climate\",\r",
+									"                    \"gravity\",\r",
+									"                    \"terrain\",\r",
+									"                    \"surface_water\",\r",
+									"                    \"population\",\r",
+									"                    \"residents\",\r",
+									"                    \"films\",\r",
+									"                    \"created\",\r",
+									"                    \"edited\",\r",
+									"                    \"url\"\r",
+									"                ],\r",
+									"                \"properties\": {\r",
+									"                    \"name\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"rotation_period\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"orbital_period\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"diameter\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"climate\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"gravity\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"terrain\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"surface_water\": {\r",
+									"                        \"type\": \"string\"\r",
+									"                    },\r",
+									"                    \"population\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"residents\": {\r",
+									"                        \"type\": \"array\",\r",
+									"                        \"items\": {\r",
+									"                            \"type\": \"string\",\r",
+									"                        }\r",
+									"                    },\r",
+									"                    \"films\": {\r",
+									"                        \"type\": \"array\",\r",
+									"                        \"items\": {\r",
+									"                            \"type\": \"string\",\r",
+									"                        }\r",
+									"                    },\r",
+									"                    \"created\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"edited\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    },\r",
+									"                    \"url\": {\r",
+									"                        \"type\": \"string\",\r",
+									"                    }\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', () => {\r",
+									"  pm.expect(ajvInstance.validate(schema, jsonBody)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"console.log(`AJV errors: ajvInstance.errors`);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/planets",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"planets"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "37666006-54fc-45d3-aed1-914bf4a3cd50",
+			"key": "uuid",
+			"value": "633e82fe-ebb6-448e-9ba4-5d29e5edcc0b",
+			"type": "string"
+		},
+		{
+			"id": "a3712415-bec2-4500-9461-d53a1c7f3900",
+			"key": "$timestamp",
+			"value": "March 25th 2020",
+			"type": "string"
+		},
+		{
+			"id": "35f239cd-d929-4fcc-9faa-512d0fa064dc",
+			"key": "timestamp",
+			"value": "March 25th 2020",
+			"type": "string"
+		},
+		{
+			"id": "37e43d0f-e830-4cf1-83fc-9ac72351e217",
+			"key": "randomString",
+			"value": "wso7oshom0886m6akvpb2yvpzkcomcj1spffykfo4y0ywan6br9cfq2zb8ep3ya8e0rj7r0y76ev0ivqa6y0pojfnvyr7ka222a0cwqocu7owa7u6vaw7scwyp91ufdo71s0t1wx6hvs7qmuwv6iey3d9m1hgjw5k0b6qqlau91zdc2e5tw6alwg2hd9k44kszuoiqy8",
+			"type": "string"
+		},
+		{
+			"id": "5b8757bd-0fd5-4e6c-ab2c-1856571630a2",
+			"key": "randomPlanetId",
+			"value": 29.590470971004336,
+			"type": "number"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
