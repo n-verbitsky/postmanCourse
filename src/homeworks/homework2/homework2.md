@@ -73,4 +73,6 @@ Create a collection, that:
   * Project created on step 1
   * All other projects with project name length > length of project name from step 1
 
+Note:
+* Get extra points for doing all those actions in 1 Request item [e.g there is only 1 request in your collection]
 
