@@ -1,5 +1,5 @@
 /*
-There is are 2 arrays^ "names1" and "names2". Create a function that:
+There are 2 arrays: "names1" and "names2". Create a function that:
 - returns array, that has names from array names1 excluding names from array names2
 */
 
