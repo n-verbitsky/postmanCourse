@@ -6,7 +6,7 @@
 2. The result of homework - single Postman Collection
 3. Avoid using Environment/Global Variables for the tasks, use Collection Variables instead
 4. Clean Collection Variables from their values, just keep variable names
-5. ANY SENSITIVE (like your credentials) should not be stored on Postman Cloud/ GitHub
+5. ANY SENSITIVE DATA (like your credentials) should not be stored on Postman Cloud/ GitHub
 
 ## Task #1:
 
