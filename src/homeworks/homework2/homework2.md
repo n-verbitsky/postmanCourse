@@ -29,6 +29,9 @@ curl --location --request GET '{{jiraHost}}/rest/api/2/search' \
 
 Create test that checks the response JSON schema using ajv.
 
+Note:
+* Custom fields should not be required in your schema.
+
 ## Task #3:
 
 There are 3 Requests for https://ws-tracks.demohoster.com/
