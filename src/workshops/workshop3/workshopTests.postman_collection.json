@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "c81b3b49-48d0-4922-90bb-f9272859e4ff",
+		"name": "workshop #3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "supportFolder",
+			"item": [
+				{
+					"name": "loggerUtils",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5eed97f2-c9b1-4626-b1ab-1994d20e1a10",
+								"exec": [
+									"pm.globals.set('logger', function logger() {\r",
+									"    const utils = {};\r",
+									"    utils.logger = (message, level = \"INFO\") => console.log(`[${level.toUpperCase()}]: ${message}`);\r",
+									"    utils.defaultLogger = () => console.log(`DEFAULT`);\r",
+									"    return utils;\r",
+									"} + '; logger();');\r",
+									"\r",
+									"pm.globals.set('randomUtils', function randomUtils() {\r",
+									"    const utils = {};\r",
+									"    utils.generateRandomInt = (min=0, max=1000) => {\r",
+									"        return _.random(min, max);\r",
+									"    };\r",
+									"    return utils;\r",
+									"} + '; randomUtils();');"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "google.com",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "testLogger",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5eed97f2-c9b1-4626-b1ab-1994d20e1a10",
+								"exec": [
+									"const _logger = eval(globals.logger);\r",
+									"const _randomUtils = eval(globals.randomUtils);\r",
+									"\r",
+									"_logger.logger(_randomUtils.generateRandomInt(1, 5));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "google.com",
+							"host": [
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "loop",
+			"item": [
+				{
+					"name": "bad way to cycle #1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6854d2ac-8474-4648-8f10-201e18d0cc0d",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"const counter = pm.collectionVariables.get(\"counter\");",
+									"pm.collectionVariables.set(\"counterBlocker\", jsonBody.results.length)",
+									"",
+									"const spiceName = jsonBody.results[counter];",
+									"",
+									"postman.setNextRequest(\"get species by name\")",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bad way to cycle #2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "096ad363-11dc-4758-b333-4d62def55ed4",
+								"exec": [
+									"const counter = pm.collectionVariables.get(\"counter\");",
+									"const blocker = pm.collectionVariables.get(\"counterBlocker\");",
+									"",
+									"if (counter >= blocker) {",
+									"    postman.setNextRequest(null);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ok way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b7b842e-970e-4f49-bbb8-4e00e9872797",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"",
+									"const arrNames = [];",
+									"",
+									"jsonBody.results.forEach(spice => arrNames.push(spice.name));",
+									"",
+									"pm.collectionVariables.set(\"arrNames\", JSON.stringify(arrNames));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "good way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b7b842e-970e-4f49-bbb8-4e00e9872797",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"",
+									"const arrSpecies = [];",
+									"",
+									"jsonBody.results.forEach(spice => {",
+									"    const newSpice = {};",
+									"    newSpice.name = spice.name;",
+									"    newSpice.designation = spice.designation;",
+									"    arrSpecies.push(newSpice);",
+									"});",
+									"",
+									"pm.collectionVariables.set(\"arrSpecies\", JSON.stringify(arrSpecies));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "asserts",
+			"item": [
+				{
+					"name": "Check First Item: Absolutely worst way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6854d2ac-8474-4648-8f10-201e18d0cc0d",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(JSON.stringify(jsonBody));",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check First Item: bad way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6854d2ac-8474-4648-8f10-201e18d0cc0d",
+								"exec": [
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Hutt\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check First Item: good way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6854d2ac-8474-4648-8f10-201e18d0cc0d",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"",
+									"pm.test(\"First Item is Hutt\", () => {",
+									"    pm.expect(jsonBody.results).is.an('array').that.is.not.empty;",
+									"    pm.expect(jsonBody.results[0].hasOwnProperty(\"name\")).to.be.true;",
+									"    pm.expect(jsonBody.results[0].name).to.equal(\"Hutt\");",
+									"});",
+									"",
+									"pm.test(\"First Item Classification is Gastopod\", () => {",
+									"    pm.expect(jsonBody.results).is.an('array').that.is.not.empty;",
+									"    pm.expect(jsonBody.results[0].hasOwnProperty(\"name\")).to.be.true;",
+									"    pm.expect(jsonBody.results[0].classification).to.equal(\"gastropod\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check First Item: right way",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6854d2ac-8474-4648-8f10-201e18d0cc0d",
+								"exec": [
+									"const jsonBody = pm.response.json();",
+									"const targetObject = {",
+									"    name: \"Hut\",",
+									"    designation: \"sentient\",",
+									"    skin_colors: \"gren, brown, tan\",",
+									"    language: \"Huttese\",",
+									"};",
+									"",
+									"pm.test(\"First Item is Hutt\", () => {",
+									"    pm.expect(jsonBody.results[0]).to.deep.include(targetObject);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "swapi.co/api/species",
+							"host": [
+								"swapi",
+								"co"
+							],
+							"path": [
+								"api",
+								"species"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"variable": [
+		{
+			"id": "e328741f-0426-498a-8b6d-d9e2a1c7974a",
+			"key": "arrNames",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "87bdce87-713c-48a7-8871-f69d857bab3d",
+			"key": [
+				"Hutt",
+				"Yoda's species",
+				"Trandoshan",
+				"Mon Calamari",
+				"Ewok",
+				"Sullustan",
+				"Neimodian",
+				"Gungan",
+				"Toydarian",
+				"Dug"
+			],
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
