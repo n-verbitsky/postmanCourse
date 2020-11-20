@@ -19,6 +19,15 @@ const names1 = ["Alex", "Dima", "Kate", "Galina", "Ivan"];
 const names2 = ["Dima", "Ivan", "Kate"];
 ```
 
+<details>
+<summary>I could use some help...</summary>
+<p>
+Checkout **difference** function in lodahs lib:
+
+- https://lodash.com/docs/4.17.15#difference
+</p>
+</details>  
+
 ## Task #2:
 
 There is a request to get issues from JIRA:
