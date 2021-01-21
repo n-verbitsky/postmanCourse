@@ -1,5 +1,5 @@
 const text = JSON.stringify(` # I open music.yandex.ru
-# I click the play button
+# I click the stop button
 # I wait until ads pop-up is opened
 # I close ads pop-up
 # I look at the header
