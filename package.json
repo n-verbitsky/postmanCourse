@@ -7,7 +7,7 @@
     "test": "src"
   },
   "scripts": {
-    "test": "mocha src/test",
+    "test": "mocha src/test --inline-diffs",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
