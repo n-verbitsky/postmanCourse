@@ -6,9 +6,33 @@ Create object "utils". It should contain:
 */
 
 const utils = {
-
+  ramdomNumber (length = 10) {
+      let number = '';
+      const digits = '0123456789';
+      for ( let index = 0; index < length; index++ ) {
+        number += digits.charAt(Math.floor(Math.random() * number.length));
+      }
+      return number},
+  ramdomText (length = 10) {
+      let text = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      for ( let index = 0; index < length; index++ ) {
+        text += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return text},
+  logger (level = 'INFO', message) {console.log(`[${level.toUpperCase()}]: ${message}`)}  
 };
 
 module.exports = {
   utils,
 };
+
+
+
+
+
+
+
+
+
+  

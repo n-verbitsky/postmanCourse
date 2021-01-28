@@ -234,3 +234,22 @@ const planets = {
 module.exports = {
   planets,
 };
+
+function task2() {
+  const small_planets = [];
+  const big_planets = [];
+  for (let index = 0; index < planets.results.length; index++) {
+    const planet = planets.results[index];
+    const planet_diameter = planet.diameter;
+    if (planet_diameter <= 10000) {
+      small_planets.push(planet)
+    }
+    else {
+      big_planets.push(planet)
+    }
+  }
+  small_planets.forEach(element => console.log(`${element.name} is a small planet`));
+  big_planets.forEach(element => console.log(`${element.name} is a big planet`));
+}
+task2();
+

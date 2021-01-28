@@ -10,3 +10,13 @@ module.exports = {
   names1,
   names2,
 };
+
+function task3 () {
+  const unicNames = []
+  for (let index = 0; index < names1.length; index++) {
+    const nameFrom1 = names1[index];
+    if (names2.includes(nameFrom1)) {}
+    else {unicNames.push(nameFrom1)}};
+  console.log(`The unic names are ${unicNames}`);      
+}
+task3 ();

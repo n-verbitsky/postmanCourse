@@ -10,3 +10,24 @@ const text = 'photo=[{\\"markers_restarted\\":true,\\"photo\\":\\"3b1a5b41d7:y\\
 module.exports = {
   text,
 };
+
+function task1 () {
+  const chars = text.split('');
+  const backslashes = [];
+  for (let index = 0; index < chars.length; index++) {
+    const char = chars[index];
+    if (char == '\\') {
+      backslashes.push(char)
+    } 
+  }
+  function splitter (originalString, splitChar){return originalString.split(splitChar)};
+  console.log(`The number of backslashes in the text is ${backslashes.length}`); 
+  console.log(splitter(text, '\\').join(''))
+}
+task1();
+
+
+
+
+
+
