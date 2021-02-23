@@ -16,7 +16,9 @@ The project contains:
 
 ### Quick start
 
-Just copy this repo on your local machine.
+Just copy/fork this repo on your local machine.
+
+You can check completed tasks in your first homework by running `npm test` in terminal. That will execute specs under test folder.
 
 
 ### License
