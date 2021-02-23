@@ -6,7 +6,9 @@ Create object "utils". It should contain:
 */
 
 const utils = {
-
+  getRundomNumer: () => undefined,
+  getRandomString: () => undefined,
+  logger: () => undefined,
 };
 
 module.exports = {

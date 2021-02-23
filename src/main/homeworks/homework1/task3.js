@@ -6,7 +6,13 @@ There are 2 arrays: "names1" and "names2". Create a function that:
 const names1 = ['Alex', 'Dima', 'Kate', 'Galina', 'Ivan'];
 const names2 = ['Dima', 'Ivan', 'Kate'];
 
+// update only this function
+function findInterception(arr1, arr2) {
+  return [];
+}
+
 module.exports = {
   names1,
   names2,
+  findInterception,
 };
