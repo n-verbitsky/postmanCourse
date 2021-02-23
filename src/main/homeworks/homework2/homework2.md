@@ -30,16 +30,9 @@ Checkout **difference** function in lodahs lib:
 
 ## Task #2:
 
-There is a request to get issues from JIRA:
-```curl
-curl --location --request GET '{{jiraHost}}/rest/api/2/search' \
---header 'Content-Type: application/json' 
-```
+There is a [response with issues from JIRA](../homework2/testResponse.json).
 
 Create test that checks the response JSON schema using ajv.
-
-Note:
-* Custom fields should not be required in your schema.
 
 ## Task #3:
 

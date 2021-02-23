@@ -1,0 +1,710 @@
+{
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 50,
+    "total": 5,
+    "issues": [
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "1894009",
+            "self": "https://jira.test.com/rest/api/2/issue/1894009",
+            "key": "test-24",
+            "fields": {
+                "fixVersions": [],
+                "resolution": null,
+                "lastViewed": "2021-02-13T15:44:04.666+0300",
+                "priority": {
+                    "self": "https://jira.test.com/rest/api/2/priority/1",
+                    "iconUrl": "https://jira.test.com/images/icons/priorities/blocker.svg",
+                    "name": "Blocker",
+                    "id": "1"
+                },
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": 25200,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "status": {
+                    "self": "https://jira.test.com/rest/api/2/status/1",
+                    "description": "The issue is open and ready for the assignee to start work on it.",
+                    "iconUrl": "https://jira.test.com/images/icons/statuses/open.png",
+                    "name": "Open",
+                    "id": "1",
+                    "statusCategory": {
+                        "self": "https://jira.test.com/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "aggregatetimeestimate": 25200,
+                "creator": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 25200,
+                    "percent": 0
+                },
+                "progress": {
+                    "progress": 0,
+                    "total": 25200,
+                    "percent": 0
+                },
+                "votes": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-24/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "issuetype": {
+                    "self": "https://jira.test.com/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://jira.test.com/secure/viewavatar?size=xsmall&avatarId=25978&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 25978
+                },
+                "timespent": 0,
+                "project": {
+                    "self": "https://jira.test.com/rest/api/2/project/00088",
+                    "id": "00088",
+                    "key": "test",
+                    "name": "Self-education test – Web-Services",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/projectavatar?avatarId=37263",
+                        "24x24": "https://jira.test.com/secure/projectavatar?size=small&avatarId=37263",
+                        "16x16": "https://jira.test.com/secure/projectavatar?size=xsmall&avatarId=37263",
+                        "32x32": "https://jira.test.com/secure/projectavatar?size=medium&avatarId=37263"
+                    }
+                },
+                "aggregatetimespent": 0,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-24/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2019-07-04T20:29:51.000+0300",
+                "updated": "2020-04-10T22:32:09.000+0300",
+                "timeoriginalestimate": null,
+                "description": "# I open music.yandex.ru\r\n# I click the play button\r\n# I wait until ads pop-up is opened\r\n# I close ads pop-up\r\n# I look at the header\r\n\r\nExpected Result:\r\n{code:java}\r\nТРЕК\r\nYesterday Remastered 2009\r\nИсполнитель: The Beatles{code}",
+                "security": {
+                    "self": "https://jira.test.com/rest/api/2/securitylevel/10000",
+                    "id": "10000",
+                    "description": "Security level for internal users only.",
+                    "name": "Internal users only"
+                },
+                "summary": "[POSTMAN] [Course] [LVL2] Test task #2",
+                "environment": null,
+                "duedate": null
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "1894015",
+            "self": "https://jira.test.com/rest/api/2/issue/1894015",
+            "key": "test-27",
+            "fields": {
+                "fixVersions": [],
+                "resolution": null,
+                "lastViewed": null,
+                "priority": {
+                    "self": "https://jira.test.com/rest/api/2/priority/3",
+                    "iconUrl": "https://jira.test.com/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                },
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "status": {
+                    "self": "https://jira.test.com/rest/api/2/status/1",
+                    "description": "The issue is open and ready for the assignee to start work on it.",
+                    "iconUrl": "https://jira.test.com/images/icons/statuses/open.png",
+                    "name": "Open",
+                    "id": "1",
+                    "statusCategory": {
+                        "self": "https://jira.test.com/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "aggregatetimeestimate": null,
+                "creator": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-27/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "issuetype": {
+                    "self": "https://jira.test.com/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://jira.test.com/secure/viewavatar?size=xsmall&avatarId=25978&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 25978
+                },
+                "timespent": 0,
+                "project": {
+                    "self": "https://jira.test.com/rest/api/2/project/42988",
+                    "id": "42988",
+                    "key": "test",
+                    "name": "Self-education test – Web-Services",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/projectavatar?avatarId=37263",
+                        "24x24": "https://jira.test.com/secure/projectavatar?size=small&avatarId=37263",
+                        "16x16": "https://jira.test.com/secure/projectavatar?size=xsmall&avatarId=37263",
+                        "32x32": "https://jira.test.com/secure/projectavatar?size=medium&avatarId=37263"
+                    }
+                },
+                "aggregatetimespent": 0,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-27/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2019-07-04T20:32:54.000+0300",
+                "updated": "2020-04-10T22:31:53.000+0300",
+                "timeoriginalestimate": null,
+                "description": "# I open music.yandex.ru\r\n\r\nExpected Result:\r\n{code:java}\r\nТРЕК\r\nEleanor Rigby Remastered 2009\r\nИсполнитель: The Beatles{code}",
+                "security": {
+                    "self": "https://jira.test.com/rest/api/2/securitylevel/10000",
+                    "id": "10000",
+                    "description": "Security level for internal users only.",
+                    "name": "Internal users only"
+                },
+                "summary": "[POSTMAN] [Course] [LVL2] Test task #5",
+                "environment": null,
+                "duedate": null
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "1894012",
+            "self": "https://jira.test.com/rest/api/2/issue/1894012",
+            "key": "test-25",
+            "fields": {
+                "fixVersions": [],
+                "resolution": null,
+                "lastViewed": null,
+                "priority": {
+                    "self": "https://jira.test.com/rest/api/2/priority/4",
+                    "iconUrl": "https://jira.test.com/images/icons/priorities/minor.svg",
+                    "name": "Minor",
+                    "id": "4"
+                },
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=s.zavadsky",
+                    "name": "s.zavadsky",
+                    "key": "s.zavadsky",
+                    "emailAddress": "",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=s.zavadsky&avatarId=42592",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=s.zavadsky&avatarId=42592",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=s.zavadsky&avatarId=42592",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=s.zavadsky&avatarId=42592"
+                    },
+                    "displayName": "Zavadsky, Sergey",
+                    "active": false,
+                    "timeZone": "Europe/Minsk"
+                },
+                "status": {
+                    "self": "https://jira.test.com/rest/api/2/status/1",
+                    "description": "The issue is open and ready for the assignee to start work on it.",
+                    "iconUrl": "https://jira.test.com/images/icons/statuses/open.png",
+                    "name": "Open",
+                    "id": "1",
+                    "statusCategory": {
+                        "self": "https://jira.test.com/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "aggregatetimeestimate": null,
+                "creator": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-25/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "issuetype": {
+                    "self": "https://jira.test.com/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://jira.test.com/secure/viewavatar?size=xsmall&avatarId=25978&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 25978
+                },
+                "timespent": 0,
+                "project": {
+                    "self": "https://jira.test.com/rest/api/2/project/42988",
+                    "id": "42988",
+                    "key": "test",
+                    "name": "Self-education test – Web-Services",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/projectavatar?avatarId=37263",
+                        "24x24": "https://jira.test.com/secure/projectavatar?size=small&avatarId=37263",
+                        "16x16": "https://jira.test.com/secure/projectavatar?size=xsmall&avatarId=37263",
+                        "32x32": "https://jira.test.com/secure/projectavatar?size=medium&avatarId=37263"
+                    }
+                },
+                "aggregatetimespent": 0,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-25/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2019-07-04T20:31:08.000+0300",
+                "updated": "2020-04-10T22:32:36.000+0300",
+                "timeoriginalestimate": null,
+                "description": "# I open music.yandex.ru\r\n# I click the play button\r\n# I wait until ads pop-up is opened\r\n# I look at the header\r\n\r\nExpected Result:\r\n{code:java}\r\nТРЕК\r\nLet It Be Remastered 2009\r\nИсполнитель: The Beatles {code}",
+                "security": {
+                    "self": "https://jira.test.com/rest/api/2/securitylevel/10000",
+                    "id": "10000",
+                    "description": "Security level for internal users only.",
+                    "name": "Internal users only"
+                },
+                "summary": "[POSTMAN] [Course] [LVL2] Test task #3",
+                "environment": null,
+                "duedate": null
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "1893933",
+            "self": "https://jira.test.com/rest/api/2/issue/1893933",
+            "key": "test-23",
+            "fields": {
+                "fixVersions": [],
+                "resolution": null,
+                "lastViewed": null,
+                "priority": {
+                    "self": "https://jira.test.com/rest/api/2/priority/3",
+                    "iconUrl": "https://jira.test.com/images/icons/priorities/major.svg",
+                    "name": "Major",
+                    "id": "3"
+                },
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=v.yaroshik",
+                    "name": "v.yaroshik",
+                    "key": "v.yaroshik",
+                    "emailAddress": "",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?avatarId=10982",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&avatarId=10982",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&avatarId=10982",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&avatarId=10982"
+                    },
+                    "displayName": "Yaroshik, Vitaly",
+                    "active": false,
+                    "timeZone": "Europe/Minsk"
+                },
+                "status": {
+                    "self": "https://jira.test.com/rest/api/2/status/1",
+                    "description": "The issue is open and ready for the assignee to start work on it.",
+                    "iconUrl": "https://jira.test.com/images/icons/statuses/open.png",
+                    "name": "Open",
+                    "id": "1",
+                    "statusCategory": {
+                        "self": "https://jira.test.com/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "aggregatetimeestimate": null,
+                "creator": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-23/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "issuetype": {
+                    "self": "https://jira.test.com/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://jira.test.com/secure/viewavatar?size=xsmall&avatarId=25978&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 25978
+                },
+                "timespent": 0,
+                "project": {
+                    "self": "https://jira.test.com/rest/api/2/project/42988",
+                    "id": "42988",
+                    "key": "test",
+                    "name": "Self-education test – Web-Services",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/projectavatar?avatarId=37263",
+                        "24x24": "https://jira.test.com/secure/projectavatar?size=small&avatarId=37263",
+                        "16x16": "https://jira.test.com/secure/projectavatar?size=xsmall&avatarId=37263",
+                        "32x32": "https://jira.test.com/secure/projectavatar?size=medium&avatarId=37263"
+                    }
+                },
+                "aggregatetimespent": 0,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-23/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2019-07-04T19:35:05.000+0300",
+                "updated": "2020-04-10T22:32:27.000+0300",
+                "timeoriginalestimate": null,
+                "description": "# I open music.yandex.ru\r\n# I click the play button\r\n# I look at the header\r\n\r\nExpected Result:\r\n{code:java}\r\nТРЕК\r\nAnd I Love Her Remastered 2009\r\nИсполнитель: The Beatles{code}",
+                "security": {
+                    "self": "https://jira.test.com/rest/api/2/securitylevel/10000",
+                    "id": "10000",
+                    "description": "Security level for internal users only.",
+                    "name": "Internal users only"
+                },
+                "summary": "[POSTMAN] [Course] [LVL2] Test task #1",
+                "environment": null,
+                "duedate": null
+            }
+        },
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "1894014",
+            "self": "https://jira.test.com/rest/api/2/issue/1894014",
+            "key": "test-26",
+            "fields": {
+                "fixVersions": [],
+                "resolution": null,
+                "lastViewed": null,
+                "priority": {
+                    "self": "https://jira.test.com/rest/api/2/priority/5",
+                    "iconUrl": "https://jira.test.com/images/icons/priorities/trivial.svg",
+                    "name": "Trivial",
+                    "id": "5"
+                },
+                "labels": [],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": null,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=a2.verbitsky",
+                    "name": "a2.verbitsky",
+                    "key": "a2.verbitsky",
+                    "emailAddress": "a2.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=a2.verbitsky&avatarId=33983",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=a2.verbitsky&avatarId=33983",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=a2.verbitsky&avatarId=33983",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=a2.verbitsky&avatarId=33983"
+                    },
+                    "displayName": "Verbitsky, Aleksandr2",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "status": {
+                    "self": "https://jira.test.com/rest/api/2/status/1",
+                    "description": "The issue is open and ready for the assignee to start work on it.",
+                    "iconUrl": "https://jira.test.com/images/icons/statuses/open.png",
+                    "name": "Open",
+                    "id": "1",
+                    "statusCategory": {
+                        "self": "https://jira.test.com/rest/api/2/statuscategory/2",
+                        "id": 2,
+                        "key": "new",
+                        "colorName": "blue-gray",
+                        "name": "To Do"
+                    }
+                },
+                "components": [],
+                "aggregatetimeestimate": null,
+                "creator": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://jira.test.com/rest/api/2/user?username=n.verbitsky",
+                    "name": "n.verbitsky",
+                    "key": "n.verbitsky",
+                    "emailAddress": "n.verbitsky@test.com",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/useravatar?ownerId=n.verbitsky&avatarId=42661",
+                        "24x24": "https://jira.test.com/secure/useravatar?size=small&ownerId=n.verbitsky&avatarId=42661",
+                        "16x16": "https://jira.test.com/secure/useravatar?size=xsmall&ownerId=n.verbitsky&avatarId=42661",
+                        "32x32": "https://jira.test.com/secure/useravatar?size=medium&ownerId=n.verbitsky&avatarId=42661"
+                    },
+                    "displayName": "Verbitsky, Nikita",
+                    "active": true,
+                    "timeZone": "Europe/Minsk"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "votes": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-26/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                },
+                "issuetype": {
+                    "self": "https://jira.test.com/rest/api/2/issuetype/3",
+                    "id": "3",
+                    "description": "A task that needs to be done.",
+                    "iconUrl": "https://jira.test.com/secure/viewavatar?size=xsmall&avatarId=25978&avatarType=issuetype",
+                    "name": "Task",
+                    "subtask": false,
+                    "avatarId": 25978
+                },
+                "timespent": 0,
+                "project": {
+                    "self": "https://jira.test.com/rest/api/2/project/42988",
+                    "id": "42988",
+                    "key": "test",
+                    "name": "Self-education test – Web-Services",
+                    "avatarUrls": {
+                        "48x48": "https://jira.test.com/secure/projectavatar?avatarId=37263",
+                        "24x24": "https://jira.test.com/secure/projectavatar?size=small&avatarId=37263",
+                        "16x16": "https://jira.test.com/secure/projectavatar?size=xsmall&avatarId=37263",
+                        "32x32": "https://jira.test.com/secure/projectavatar?size=medium&avatarId=37263"
+                    }
+                },
+                "aggregatetimespent": 0,
+                "resolutiondate": null,
+                "workratio": -1,
+                "watches": {
+                    "self": "https://jira.test.com/rest/api/2/issue/test-26/watchers",
+                    "watchCount": 0,
+                    "isWatching": false
+                },
+                "created": "2019-07-04T20:32:11.000+0300",
+                "updated": "2020-04-10T22:32:20.000+0300",
+                "timeoriginalestimate": null,
+                "description": "# I open music.yandex.ru\r\n# I click the play button\r\n# I look at the header\r\n\r\nExpected Result:\r\n{code:java}\r\nТРЕК\r\nHelp! Remastered 2009\r\nИсполнитель: The Beatles{code}",
+                "security": {
+                    "self": "https://jira.test.com/rest/api/2/securitylevel/10000",
+                    "id": "10000",
+                    "description": "Security level for internal users only.",
+                    "name": "Internal users only"
+                },
+                "summary": "[POSTMAN] [Course] [LVL2] Test task #4",
+                "environment": null,
+                "duedate": null
+            }
+        }
+    ]
+}
