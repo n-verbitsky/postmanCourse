@@ -1,7 +1,7 @@
 /*
 There is an object "Planets". Create a function that:
 - returns array of planets, where "diameter" <= 10000.
-- returns  array of planets, where "diameter" > 10000.
+- returns array of planets, where "diameter" > 10000.
 */
 
 const planets = {
