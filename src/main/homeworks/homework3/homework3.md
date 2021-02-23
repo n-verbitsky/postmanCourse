@@ -3,7 +3,7 @@
 ## Before you start:
 
 1. The result of homework - single Postman Collection + video/gif of your Jenkins job configuration and execution
-2. JQL sample and access to Jira project will be provided by your mentor.
+2. There is no actual Jira service to work with - you will need to mock search endpoint yourself.
 3. Avoid using Environment/Global Variables for the tasks, use Collection Variables instead
 4. Clean Collection Variables from their values, just keep variable names
 5. Code does not have passwords for access to third-party services in clear form, e.g. ANY SENSITIVE DATA (like your credentials) should not be stored on Postman Cloud/ GitHub
@@ -11,7 +11,9 @@
 
 ## Task #1:
 
-You need to implement a Postman collection to migrate test cases from Jira into TestRail by proved JQL query.
+You need to implement
+* a mock for [Jira's search API endpoint](https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/#searching-for-issues-examples). Use [testRequest.json](../homework2/testResponse.json) from previous task as response sample.
+* a Postman collection to migrate test cases from Jira into TestRail by provided random JQL query.
 
 You can use following mapping for Test Rail data:
 
@@ -33,3 +35,5 @@ Your Postman Collection should meet the following requirements:
 ## Task #2:
 
 Create Jenkins job that will execute Postman Collection from Task #1 every working day from 3 A.M. to 6 A.M. 
+
+Note: use [crontab.guru](https://crontab.guru/) for implementing cron expression.
