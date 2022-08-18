@@ -1,5 +1,5 @@
 {
-  "name": "jstraining",
+  "name": "postmancourse",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/n-verbitsky/postmanCourse",
   "dependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.6",
     "nvm": "0.0.4"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.20.2",
-    "mocha": "^6.2.3"
+    "mocha": "^10.0.0"
   }
 }
